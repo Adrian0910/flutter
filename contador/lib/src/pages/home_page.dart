@@ -1,8 +1,15 @@
+/* No nos dejo trabajar con el contador,
+esto porque es un StatelessWidget, 
+en su lugar trabajamos con un StatefullWidget
+ */
+
 import 'package:flutter/material.dart';
 
 class HomePages extends StatelessWidget {
   // Aqui podria remplazar 'TextStyle  por la palabra final
   final TextStyle estiloTexto = new TextStyle(fontSize: 25);
+
+  final conteo = 10;
 
   @override
   Widget build(BuildContext context) {
@@ -14,10 +21,10 @@ class HomePages extends StatelessWidget {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
+          children: <Widget>[
             Text('Número de clicks: ', style: estiloTexto),
             Text(
-              '0',
+              '$conteo',
               style: estiloTexto,
             )
           ],
@@ -29,6 +36,7 @@ class HomePages extends StatelessWidget {
         child: Icon(Icons.add),
         onPressed: () {
           print('HolaMundo');
+          // conteo = conteo + 1 ;
         },
       ),
     );
